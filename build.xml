@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<project name="medical_generate_hbm" default="generateHibernateMapping" basedir=".">
+    <property name="src.dir" value="${basedir}/src"/>  
+    <property name="xdoclet.home" value="D:/javaRelatedTools/xdoclet/xdoclet-1.2.3"/>  
+    <property name="hibernate.home" value="D:/javaRelatedTools/hibernate/hibernate-3.2.1.ga/hibernate-3.2"/>
+        
+    <!-- build classpath -->  
+    <path id="xdoclet.task.classpath">  
+        <fileset dir="${xdoclet.home}/lib">  
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${hibernate.home}/lib"> 
+            <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${basedir}/lib">  
+            <include name="**/*.jar"/>
+        </fileset>
+        <path location="${basedir}/bin"/>
+    </path>  
+        
+    <taskdef name="hibernatedoclet" 
+        classname="xdoclet.modules.hibernate.HibernateDocletTask"
+        classpathref="xdoclet.task.classpath"/>
+
+    <target name="generateHibernateMapping">
+    
+        <hibernatedoclet destdir="${src.dir}" mergedir="${src.dir}" excludedtags="@version,@author,@todo,@see,@uml,@return" verbose="true" force="false">
+            <fileset dir="${src.dir}">
+                <include name="ls/jtsk/model/*.java"/>
+            </fileset>
+            <hibernate version="3.0"/> 
+        </hibernatedoclet>
+    </target>  
+    
+    <target name="generate-sqlite-sql" depends="generateHibernateMapping">
+        <taskdef name="schemaexport"
+            classname="org.hibernate.tool.hbm2ddl.SchemaExportTask"
+            classpathref="xdoclet.task.classpath"/>
+        <property name="hibernate.dialect" value="ls.jtsk.dialect.SQLiteDialect"/>
+        <property name="hibernate.format_sql" value="true"/>
+        <property name="hibernate.use_sql_comments true" value="true"/>
+        <schemaexport
+            quiet="no"
+            text="yes"
+            drop="no"
+            delimiter=";"
+            output="${src.dir}/sqlite-schema.sql">
+            <fileset dir="${src.dir}">
+                <include name="ls/jtsk/model/*.hbm.xml"/>
+            </fileset>
+        </schemaexport>
+    </target>
+    
+    
+</project>

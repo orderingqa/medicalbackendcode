@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="dialect">ls.jtsk.dialect.SQLiteDialect</property>
+		<property name="connection.driver_class">org.sqlite.JDBC</property>
+		<property name="connection.url">jdbc:sqlite:apgar.db</property>
+		<property name="connection.username"></property>
+		<property name="connection.password"></property>
+
+		<mapping resource="ls/jtsk/model/Doctor.hbm.xml"/>
+		<mapping resource="ls/jtsk/model/Apgar.hbm.xml"/>
+		<mapping resource="ls/jtsk/model/Baby.hbm.xml"/>
+		<mapping resource="ls/jtsk/model/Gravida.hbm.xml"/>
+		<mapping resource="ls/jtsk/model/Cases.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
