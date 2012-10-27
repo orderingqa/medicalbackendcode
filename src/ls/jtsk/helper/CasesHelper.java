@@ -23,7 +23,7 @@ public class CasesHelper {
 	 */
 	public static List getCasesSortByField(int numberOfOnePage, int pageIndex, String sortByField) {
 		int offset = (pageIndex-1) * numberOfOnePage;
-		HibernateTestUtil.getSession();;
+		HibernateTestUtil.getSession();
 		// 从offset数字后面的记录往后算，取第几条数据, order by是排序依据
 		SQLQuery sqlQuery = HibernateTestUtil.session.createSQLQuery(
 				"select {c.*} from Cases c, Gravida d where c.id=d.id order by "+ sortByField + " limit " + numberOfOnePage +  " offset " + offset );

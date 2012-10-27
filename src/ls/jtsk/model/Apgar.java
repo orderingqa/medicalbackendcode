@@ -29,27 +29,27 @@ public class Apgar  implements Serializable{
 	/**
 	 * @uml.property  name="pulse"
 	 */
-	private int pulse;
+	private int pulse; //心率
 
 	/**
 	 * @uml.property  name="grimace"
 	 */
-	private int grimace;
+	private int grimace; //对刺激反应、怪象
 
 	/**
 	 * @uml.property  name="activity"
 	 */
-	private int activity;
+	private int activity; // 肌张力
 
 	/**
 	 * @uml.property  name="respiration"
 	 */
-	private int respiration;
+	private int respiration; // 呼吸
 
 	/**
 	 * @uml.property  name="appearance"
 	 */
-	private int appearance;
+	private int appearance; // 肤色
 	/**
 	 * Getter of the property <tt>id</tt>
 	 * @return  Returns the id.
@@ -131,7 +131,7 @@ public class Apgar  implements Serializable{
 	/**
 		 */
 		public int getSum(){
-			return 0;
+			return getActivity()+getPulse()+getAppearance()+getGrimace()+getRespiration();
 		}
 
 		/**
