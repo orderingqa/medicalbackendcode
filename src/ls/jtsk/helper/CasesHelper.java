@@ -32,8 +32,7 @@ public class CasesHelper {
 		HibernateTestUtil.destroySession();
 		return list;
 	}
-	
-	
+		
 	/**
 	 * UI should pass one parameter as numberOfOnePage
 	 * @param numberOfOnePage
@@ -43,7 +42,7 @@ public class CasesHelper {
 		return getCasesSortByField(numberOfOnePage, 1, "createDate");
 	}
 	
-	public void addCase(int age, String gravidaName, int medicalNo, String doctorName) {
+	public static long addCase(int medicalNo, String doctorName, String gravidaName, int age) {
 	    Gravida gravida = new Gravida();
 	    gravida.setAge(age);
 	    gravida.setName(gravidaName);
@@ -58,5 +57,29 @@ public class CasesHelper {
 	    HibernateTestUtil.session.save(doctor); // 我们必须先save doctor，然后Cases表的外键才会起作用。
 	    HibernateTestUtil.session.save(newCase); // Case和Gravida的对应关系是严格一对一的，主键都是一样的。
 	    HibernateTestUtil.destroySession();
+	    return newCase.getId();
+	}
+	
+	public static Cases getCasesById(long caseGravidaId) {
+		HibernateTestUtil.getSession();
+		Cases casesFromId = (Cases) HibernateTestUtil.session.load(Cases.class, caseGravidaId);
+		HibernateTestUtil.destroySession();
+		return casesFromId;
+	}
+	
+	public static Gravida getGravidaById(long caseGravidaId) {
+		HibernateTestUtil.getSession();
+		Gravida gravidaFromId = (Gravida) HibernateTestUtil.session.load(Gravida.class, caseGravidaId);
+//      TODO 理想情况是直接返回gravidaFromId。但直接返回gravidaFromId，就不能destroy session，否则会报session失效的错误。
+//      所以这个时候，我clone了另外一个gravida对象。
+//		Gravida clonedGravida = cloneObj(gravidaFromId);
+		HibernateTestUtil.destroySession();
+//		return clonedGravida;
+        return gravidaFromId;
+	}
+
+	private static Gravida cloneObj(Gravida gravidaFromId) {
+		// TODO 这个暂时不实现也无所谓，期望自己实现或者寻找一个能够克隆简单对象的函数。
+		return null;
 	}
 }

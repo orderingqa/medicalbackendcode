@@ -31,10 +31,9 @@ public class TestCases {
 	    String gravidaNameString = "²¡Àú"+randomNum;
 	    int medicalNo = randomNum;
 	    String doctorNameString = "Áõ´ó·ò"+randomNum;
-	    CasesHelper chCasesHelper = new CasesHelper();
-	    chCasesHelper.addCase(age, gravidaNameString, medicalNo, doctorNameString);
+	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age);
 	}
-	
+		
 	@Test
 	public void testGetCasesSortByField() {
 		CasesHelper ch = new CasesHelper();
