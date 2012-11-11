@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" size="351,1050" id="ls.jtsk.model" metadata="uml2-1.0" initialized="true" scrolledX="-18" scrolledY="803" tag="10" key="32303037303533312D3130206D65646963616C">
+  <children xsi:type="editmodel:ClassEditModel" name="Apgar" location="105,855" size="136,214" id="ls.jtsk.model/Apgar" runTimeClassModel="id,respiration,appearance,apgarInterval,grimace,getSum(),pulse,activity">
+    <children xsi:type="editmodel:CompartmentEditModel" size="113,144">
+      <children xsi:type="editmodel:AttributeEditModel" name="activity" id="ls.jtsk.model/Apgar#activity"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="appearance" id="ls.jtsk.model/Apgar#appearance"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="grimace" id="ls.jtsk.model/Apgar#grimace"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="pulse" id="ls.jtsk.model/Apgar#pulse"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="respiration" id="ls.jtsk.model/Apgar#respiration"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="ls.jtsk.model/Apgar#id"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="apgarInterval" id="ls.jtsk.model/Apgar#apgarInterval"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="76,18">
+      <children xsi:type="editmodel:MethodEditModel" name="getSum" id="ls.jtsk.model/Apgar#getSum()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="CaseList" location="0,4" size="177,88" id="ls.jtsk.model/CaseList" runTimeClassModel="getCasesSortByField(IILjava.lang.String;),getLatestCases(I)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="154,36">
+      <children xsi:type="editmodel:MethodEditModel" name="getCasesSortByField" id="ls.jtsk.model/CaseList#getCasesSortByField(IILjava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getLatestCases" id="ls.jtsk.model/CaseList#getLatestCases(I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.2" name="Gravida" location="-13,435" size="165,160" id="ls.jtsk.model/Gravida" runTimeClassModel="id,babys,Gravida(),name,age,medicNo">
+    <children xsi:type="editmodel:CompartmentEditModel" size="142,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="age" id="ls.jtsk.model/Gravida#age"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="babys" location="10,46" id="ls.jtsk.model/Gravida#babys"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="medicNo" id="ls.jtsk.model/Gravida#medicNo"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="ls.jtsk.model/Gravida#name"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="ls.jtsk.model/Gravida#id"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="86,36">
+      <children xsi:type="editmodel:MethodEditModel" name="Gravida" id="ls.jtsk.model/Gravida#Gravida()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="ls.jtsk.model/Gravida@gravida+ls.jtsk.model/Case@" source="//@children.2" target="//@children.3" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="gravida" location="143,26" id="ls.jtsk.model/Gravida@gravida+ls.jtsk.model/Case@|ls.jtsk.model/Gravida#gravida" attachSource="true" multiplicityLabel="//@children.2/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.2/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - gravida" location="159,468" size="46,14" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="159,440" size="6,14" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="81,85" id="ls.jtsk.model/Gravida@gravida+ls.jtsk.model/Case@|ls.jtsk.model/Case#" roleLabel="//@children.2/@sourceConnections.0/@children.2/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" location="74,380" size="0,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0" name="Case" location="0,285" size="140,88" id="ls.jtsk.model/Case" runTimeClassModel="Case(Lls.jtsk.model.Gravida;Lls.jtsk.model.Doctor;Ljava.sql.Date;),createDate">
+    <children xsi:type="editmodel:CompartmentEditModel" size="117,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="createDate" id="ls.jtsk.model/Case#createDate"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="61,18">
+      <children xsi:type="editmodel:MethodEditModel" name="Case" id="ls.jtsk.model/Case#Case(Lls.jtsk.model.Gravida;Lls.jtsk.model.Doctor;Ljava.sql.Date;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="ls.jtsk.model/Doctor@doctor+ls.jtsk.model/Case@" source="//@children.3" target="//@children.5" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,0" id="ls.jtsk.model/Doctor@doctor+ls.jtsk.model/Case@|ls.jtsk.model/Case#" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="doctor" location="61,75" id="ls.jtsk.model/Doctor@doctor+ls.jtsk.model/Case@|ls.jtsk.model/Doctor#doctor" multiplicityLabel="//@children.3/@sourceConnections.0/@children.2/@children.1" roleLabel="//@children.3/@sourceConnections.0/@children.2/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - doctor" location="68,242" size="41,14" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="48,242" size="6,14" anchorKind="LastPart"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ls.jtsk.model/Case-Soyatec::Import->ls.jtsk.model/Doctor" source="//@children.3" target="//@children.5" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="123,15" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="119,75"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="ls.jtsk.model/Case-Soyatec::Import->ls.jtsk.model/Gravida" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.2/@children.2" label="//@children.3/@sourceConnections.2/@children.0" sourceEnd="//@children.3/@sourceConnections.2/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="61,85" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="74,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:EnumerationEditModel" targetConnections="//@children.6/@sourceConnections.0" name="Gender" location="-13,855" size="94,89" id="ls.jtsk.model/Gender" runTimeClassModel="Girl%,Boy%">
+    <children xsi:type="editmodel:CompartmentEditModel" size="38,36"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0 //@children.3/@sourceConnections.1" name="Doctor" location="0,160" size="134,75" id="ls.jtsk.model/Doctor" runTimeClassModel="doctorId,doctorName">
+    <children xsi:type="editmodel:CompartmentEditModel" size="111,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="doctorId" id="ls.jtsk.model/Doctor#doctorId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="doctorName" id="ls.jtsk.model/Doctor#doctorName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Baby" location="-30,630" size="130,139" id="ls.jtsk.model/Baby" runTimeClassModel="id,addApgarScore(Lls.jtsk.model.Apgarinterval;Lls.jtsk.model.Apgar;),gender,mom,birthTime">
+    <children xsi:type="editmodel:CompartmentEditModel" size="95,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="birthTime"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gender"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mom"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="id" id="ls.jtsk.model/Baby#id"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,18">
+      <children xsi:type="editmodel:MethodEditModel" name="addApgarScore"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.6" target="//@children.4" targetEnd="//@children.6/@sourceConnections.0/@children.2" label="//@children.6/@sourceConnections.0/@children.0" sourceEnd="//@children.6/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,139" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="46,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=7;Product=eUML2" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler>
+      <guides position="9"/>
+    </leftRuler>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

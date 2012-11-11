@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping
+>
+    <class
+        name="ls.jtsk.otherhelp.Book"
+        table="bk_ts"
+    >
+
+        <id
+            name="id"
+            column="id"
+            type="java.lang.Long"
+        >
+            <generator class="native">
+              <!--  
+                  To add non XDoclet generator parameters, create a file named 
+                  hibernate-generator-params-Book.xml 
+                  containing the additional parameters and place it in your merge dir. 
+              --> 
+            </generator>
+        </id>
+
+        <property
+            name="code"
+            type="string"
+            update="true"
+            insert="true"
+            column="dm"
+            length="20"
+            not-null="false"
+        />
+
+        <property
+            name="name"
+            type="string"
+            update="true"
+            insert="true"
+            column="mc"
+            length="100"
+            not-null="true"
+        />
+
+        <property
+            name="bookman"
+            type="string"
+            update="true"
+            insert="true"
+            column="cbs"
+            length="24"
+            not-null="false"
+        />
+
+        <property
+            name="pubDate"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="cbrq"
+            not-null="false"
+        />
+
+        <property
+            name="author"
+            type="string"
+            update="true"
+            insert="true"
+            column="zz"
+            length="24"
+            not-null="false"
+        />
+
+        <property
+            name="translator"
+            type="string"
+            update="true"
+            insert="true"
+            column="yz"
+            length="24"
+            not-null="false"
+        />
+
+        <property
+            name="price"
+            type="big_decimal"
+            update="true"
+            insert="true"
+            column="dj"
+            not-null="true"
+        />
+
+        <property
+            name="amount"
+            type="int"
+            update="true"
+            insert="true"
+            column="sl"
+            not-null="true"
+        />
+
+        <property
+            name="buyer"
+            type="string"
+            update="true"
+            insert="true"
+            column="cgr"
+            length="12"
+            not-null="false"
+        />
+
+        <property
+            name="assessor"
+            type="string"
+            update="true"
+            insert="true"
+            column="shr"
+            length="12"
+            not-null="false"
+        />
+
+        <property
+            name="dateMark"
+            type="timestamp"
+            update="true"
+            insert="true"
+            column="czsj"
+            not-null="true"
+        />
+
+        <property
+            name="operator"
+            type="string"
+            update="true"
+            insert="true"
+            column="czy"
+            length="12"
+            not-null="true"
+        />
+
+        <property
+            name="sort"
+            type="string"
+            update="true"
+            insert="true"
+            column="lb"
+            length="12"
+            not-null="true"
+        />
+
+        <property
+            name="summary"
+            type="string"
+            update="true"
+            insert="true"
+            column="zy"
+            length="600"
+            not-null="false"
+        />
+
+        <property
+            name="remark"
+            type="string"
+            update="true"
+            insert="true"
+            column="bz"
+            length="200"
+            not-null="false"
+        />
+
+        <!--
+            To add non XDoclet property mappings, create a file named
+                hibernate-properties-Book.xml
+            containing the additional properties and place it in your merge dir.
+        -->
+
+    </class>
+
+</hibernate-mapping>

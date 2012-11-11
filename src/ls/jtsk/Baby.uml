@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_29aScAkSEeKxyeH8s75Wjw" name="Baby">
+  <ownedComment xmi:id="_C9Iz8An8EeKzusTrpsnMsg">
+    <body>只要有婴儿信息，我们便显示print按钮</body>
+  </ownedComment>
+  <ownedComment xmi:id="_JSQi8An8EeKzusTrpsnMsg">
+    <body>婴儿信息创建即表明APGAR有效。不管何种原因造成婴儿信息存在，但apga缺失的，我们都不允许再补填APGAR。故APGAR标志并不需要，从apgarScoreHash中取出数据即可。</body>
+  </ownedComment>
+  <elementImport xmi:id="_2-DLoAkSEeKxyeH8s75Wjw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_2-DLoQkSEeKxyeH8s75Wjw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_2-DLogkSEeKxyeH8s75Wjw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <elementImport xmi:id="_2-DLowkSEeKxyeH8s75Wjw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5dRAEAkSEeKxyeH8s75Wjw" name="Baby" clientDependency="_Trex0AoCEeKIpr1N25ROYA">
+    <ownedAttribute xmi:id="_9SYQcAkSEeKxyeH8s75Wjw" name="birthday" aggregation="composite"/>
+    <ownedAttribute xmi:id="_FyvH8AkTEeKxyeH8s75Wjw" name="gender" aggregation="composite"/>
+    <ownedAttribute xmi:id="_HoER4AkTEeKxyeH8s75Wjw" name="property" aggregation="composite"/>
+    <ownedAttribute xmi:id="_na4jQAkTEeKxyeH8s75Wjw" name="mom" type="_wAEQYAkTEeKxyeH8s75Wjw" aggregation="composite"/>
+    <ownedAttribute xmi:id="_Tq8N4AkTEeKxyeH8s75Wjw" name="OneMinApgarScore" type="_UhDiQAkuEeKpMOQ42elF1g" aggregation="composite"/>
+    <ownedAttribute xmi:id="_M-6CoAkyEeKePJ46FEDBOQ" name="FiveMinApgarScore" type="_UhDiQAkuEeKpMOQ42elF1g" aggregation="composite"/>
+    <ownedAttribute xmi:id="_PB-GkAkyEeKePJ46FEDBOQ" name="TenMinApgarScore" type="_UhDiQAkuEeKpMOQ42elF1g" aggregation="composite"/>
+    <ownedAttribute xmi:id="_WzJGIAndEeKzusTrpsnMsg" name="isApgared" aggregation="composite"/>
+    <ownedAttribute xmi:id="_prK8EAndEeKzusTrpsnMsg" name="apgaredTag" aggregation="composite"/>
+    <ownedAttribute xmi:id="_jxZO0AnpEeKzusTrpsnMsg" name="apgarScoreHash" type="_UhDiQAkuEeKpMOQ42elF1g" aggregation="composite"/>
+    <ownedAttribute xmi:id="_MnCQ8An9EeKzusTrpsnMsg" name="property1" aggregation="composite"/>
+    <ownedOperation xmi:id="_RiX-4AkTEeKxyeH8s75Wjw" name="save">
+      <ownedParameter xmi:id="_l29SYAkTEeKxyeH8s75Wjw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_nmDzQAnpEeKzusTrpsnMsg" name="setBirthday">
+      <ownedParameter xmi:id="_osYiIAnpEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_pYDVUAnpEeKzusTrpsnMsg" name="setGender">
+      <ownedParameter xmi:id="_qDbNkAnpEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_w8NDQAnpEeKzusTrpsnMsg" name="setMedicalNo">
+      <ownedParameter xmi:id="_yi5UQAnpEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__k0dAAnqEeKzusTrpsnMsg" name="createBaby">
+      <ownedParameter xmi:id="_Bra9IAnrEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_BzTd8AkTEeKxyeH8s75Wjw" name="addApgarScore">
+      <ownedParameter xmi:id="_pK4mkAnqEeKzusTrpsnMsg" direction="return"/>
+      <ownedParameter xmi:id="_pK4mkQnqEeKzusTrpsnMsg" name="minEnum">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_pK4mkgnqEeKzusTrpsnMsg"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_pK4mkwnqEeKzusTrpsnMsg" name="apgar">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_pK4mlAnqEeKzusTrpsnMsg"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wAEQYAkTEeKxyeH8s75Wjw" name="Gravida">
+    <ownedAttribute xmi:id="_65OLQAkTEeKxyeH8s75Wjw" name="medicalNo" aggregation="composite"/>
+    <ownedAttribute xmi:id="_8gwJwAkTEeKxyeH8s75Wjw" name="name" aggregation="composite"/>
+    <ownedAttribute xmi:id="_-Ak9wAkTEeKxyeH8s75Wjw" name="age" aggregation="composite"/>
+    <ownedAttribute xmi:id="_7f398AlHEeKzR4HpoaTdGA" name="babys[]" type="_5dRAEAkSEeKxyeH8s75Wjw" aggregation="composite"/>
+    <ownedOperation xmi:id="_A6qJQAkUEeKxyeH8s75Wjw" name="save">
+      <ownedParameter xmi:id="_B2BlUAkUEeKxyeH8s75Wjw" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_gjMOcAneEeKzusTrpsnMsg" name="getBabyNumber">
+      <ownedParameter xmi:id="_hl-hIAneEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_ccWjsAkUEeKxyeH8s75Wjw" name="dependency"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_ckNfMAkUEeKxyeH8s75Wjw" name="dependency1"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_c2-qMAkUEeKxyeH8s75Wjw" name="dependency2"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_UhDiQAkuEeKpMOQ42elF1g" name="Apgar" clientDependency="_RngH4AoCEeKIpr1N25ROYA">
+    <ownedAttribute xmi:id="_cdoXQAkuEeKpMOQ42elF1g" name="Sum" aggregation="composite"/>
+    <ownedAttribute xmi:id="_V72vgAkyEeKePJ46FEDBOQ" name="Appearance" aggregation="composite"/>
+    <ownedAttribute xmi:id="_YGCIEAkyEeKePJ46FEDBOQ" name="Pulse" aggregation="composite"/>
+    <ownedAttribute xmi:id="_YlwxAAkyEeKePJ46FEDBOQ" name="Grimace" aggregation="composite"/>
+    <ownedAttribute xmi:id="_aJ75gAkyEeKePJ46FEDBOQ" name="Activity" aggregation="composite"/>
+    <ownedAttribute xmi:id="_bYXbgAkyEeKePJ46FEDBOQ" name="Respiration" aggregation="composite"/>
+    <ownedOperation xmi:id="_ioT0AAkyEeKePJ46FEDBOQ" name="save">
+      <ownedParameter xmi:id="_lXuAkAkyEeKePJ46FEDBOQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_m1sacAkyEeKePJ46FEDBOQ" name="setSum">
+      <ownedParameter xmi:id="_qW7FgAkyEeKePJ46FEDBOQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_OseOUAlLEeKzR4HpoaTdGA" name="Doctor">
+    <ownedAttribute xmi:id="_NvLqMAlMEeKzR4HpoaTdGA" name="name" aggregation="composite"/>
+    <ownedAttribute xmi:id="_O3HioAlMEeKzR4HpoaTdGA" name="doctorId" aggregation="composite"/>
+    <ownedOperation xmi:id="_bwx_4AlQEeKzR4HpoaTdGA" name="save">
+      <ownedParameter xmi:id="_cfe48AlQEeKzR4HpoaTdGA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Cn0UMAlMEeKzR4HpoaTdGA" name="Case" clientDependency="_L9i_IAnpEeKzusTrpsnMsg">
+    <ownedComment xmi:id="_AOgDcAn8EeKzusTrpsnMsg"/>
+    <ownedComment xmi:id="_CJyEYAn8EeKzusTrpsnMsg"/>
+    <ownedAttribute xmi:id="_SF3WkAlMEeKzR4HpoaTdGA" name="gravida" type="_wAEQYAkTEeKxyeH8s75Wjw" aggregation="composite"/>
+    <ownedAttribute xmi:id="_WCBqIAlMEeKzR4HpoaTdGA" name="doctor" type="_OseOUAlLEeKzR4HpoaTdGA" aggregation="composite"/>
+    <ownedAttribute xmi:id="_XSX-EAlUEeKzR4HpoaTdGA" name="createDate" aggregation="composite">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EDate"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_qUAqsAlOEeKzR4HpoaTdGA" name="save">
+      <ownedParameter xmi:id="_rHAN4AlOEeKzR4HpoaTdGA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_2O1BcAlPEeKzR4HpoaTdGA" name="setGravida">
+      <ownedParameter xmi:id="_30jCEAlPEeKzR4HpoaTdGA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_4geT8AlPEeKzR4HpoaTdGA" name="setDoctor">
+      <ownedParameter xmi:id="_6PVCcAlPEeKzR4HpoaTdGA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_SCbwMAndEeKzusTrpsnMsg" name="canPrint">
+      <ownedParameter xmi:id="_S8mSYAndEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_Ts5RcAneEeKzusTrpsnMsg" name="getBabyNumber">
+      <ownedParameter xmi:id="_alA_0AneEeKzusTrpsnMsg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_4kljMAnkEeKzusTrpsnMsg" name="delete">
+      <ownedParameter xmi:id="_5ac0MAnkEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fiLHQAnnEeKzusTrpsnMsg" name="remove">
+      <ownedParameter xmi:id="_gNbqwAnnEeKzusTrpsnMsg" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_4EY_cAlQEeKzR4HpoaTdGA" memberEnd="_4EY_cQlQEeKzR4HpoaTdGA _4EZmgglQEeKzR4HpoaTdGA">
+    <ownedEnd xmi:id="_4EY_cQlQEeKzR4HpoaTdGA" name="src" type="_Cn0UMAlMEeKzR4HpoaTdGA" association="_4EY_cAlQEeKzR4HpoaTdGA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4EZmgQlQEeKzR4HpoaTdGA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4EZmgAlQEeKzR4HpoaTdGA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_4EZmgglQEeKzR4HpoaTdGA" name="dst" type="_OseOUAlLEeKzR4HpoaTdGA" association="_4EY_cAlQEeKzR4HpoaTdGA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4EaNkAlQEeKzR4HpoaTdGA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4EZmgwlQEeKzR4HpoaTdGA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_tEMWgAlSEeKzR4HpoaTdGA" name="CaseList">
+    <ownedOperation xmi:id="_Hl23UAlTEeKzR4HpoaTdGA" name="getLatestCases">
+      <ownedParameter xmi:id="_N01nAAngEeKzusTrpsnMsg" type="_Cn0UMAlMEeKzR4HpoaTdGA" direction="return"/>
+      <ownedParameter xmi:id="_N01nAQngEeKzusTrpsnMsg" name="numOfOnePage">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_N01nAgngEeKzusTrpsnMsg"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_PuBRQAlTEeKzR4HpoaTdGA" name="getCaseListByPage">
+      <ownedParameter xmi:id="_KbVUkAngEeKzusTrpsnMsg" type="_Cn0UMAlMEeKzR4HpoaTdGA" direction="return"/>
+      <ownedParameter xmi:id="_KbVUkQngEeKzusTrpsnMsg" name="numOfOnePage">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_KbVUkgngEeKzusTrpsnMsg"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_KbVUkwngEeKzusTrpsnMsg" name="currentPage">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_KbVUlAngEeKzusTrpsnMsg"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_GvCuoAlUEeKzR4HpoaTdGA" name="getCaseListSortByField">
+      <ownedParameter xmi:id="__iT8kAnfEeKzusTrpsnMsg" type="_Cn0UMAlMEeKzR4HpoaTdGA" direction="return"/>
+      <ownedParameter xmi:id="__iT8kQnfEeKzusTrpsnMsg" name="numOfOnePage">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="__iT8kgnfEeKzusTrpsnMsg"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="__iT8kwnfEeKzusTrpsnMsg" name="sortField">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="__iT8lAnfEeKzusTrpsnMsg"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_qwFT8AlUEeKzR4HpoaTdGA" memberEnd="_qwF7AAlUEeKzR4HpoaTdGA _qwGiEglUEeKzR4HpoaTdGA">
+    <ownedEnd xmi:id="_qwF7AAlUEeKzR4HpoaTdGA" name="1" type="_tEMWgAlSEeKzR4HpoaTdGA" association="_qwFT8AlUEeKzR4HpoaTdGA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qwGiEQlUEeKzR4HpoaTdGA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qwGiEAlUEeKzR4HpoaTdGA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_qwGiEglUEeKzR4HpoaTdGA" name="N" type="_Cn0UMAlMEeKzR4HpoaTdGA" association="_qwFT8AlUEeKzR4HpoaTdGA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qwHJIQlUEeKzR4HpoaTdGA" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qwHJIAlUEeKzR4HpoaTdGA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_L9i_IAnpEeKzusTrpsnMsg" supplier="_wAEQYAkTEeKxyeH8s75Wjw" client="_Cn0UMAlMEeKzR4HpoaTdGA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_RngH4AoCEeKIpr1N25ROYA" supplier="_5dRAEAkSEeKxyeH8s75Wjw" client="_UhDiQAkuEeKpMOQ42elF1g"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_Trex0AoCEeKIpr1N25ROYA" supplier="_wAEQYAkTEeKxyeH8s75Wjw" client="_5dRAEAkSEeKxyeH8s75Wjw"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_p10A0AoUEeKhx_VVSZokVA" name="ApgarTimer">
+    <ownedAttribute xmi:id="_wgH8sAoUEeKhx_VVSZokVA" name="startTimeStamp" aggregation="composite"/>
+    <ownedOperation xmi:id="_tHcJoAoUEeKhx_VVSZokVA" name="start">
+      <ownedParameter xmi:id="_uXRZ0AoUEeKhx_VVSZokVA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_7yx8sAoUEeKhx_VVSZokVA" name="alarm"/>
+    <ownedOperation xmi:id="_cR2QEAoVEeKhx_VVSZokVA" name="triggerAlarm">
+      <ownedParameter xmi:id="_d6bXcAoVEeKhx_VVSZokVA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_v4MkkAoVEeKhx_VVSZokVA" name="drawClock">
+      <ownedParameter xmi:id="_w-mzAAoVEeKhx_VVSZokVA" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>

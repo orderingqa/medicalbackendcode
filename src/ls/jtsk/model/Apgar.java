@@ -32,24 +32,33 @@ public class Apgar  implements Serializable{
 	private int pulse; //心率
 
 	/**
-	 * @uml.property  name="grimace"
+	 * @uml.property  name="respiration"
 	 */
-	private int grimace; //对刺激反应、怪象
-
+	private int respiration; // 呼吸
+	
 	/**
 	 * @uml.property  name="activity"
 	 */
 	private int activity; // 肌张力
 
 	/**
-	 * @uml.property  name="respiration"
+	 * @uml.property  name="grimace"
 	 */
-	private int respiration; // 呼吸
-
+	private int grimace; //对刺激反应、怪象
+	
 	/**
 	 * @uml.property  name="appearance"
 	 */
 	private int appearance; // 肤色
+	
+	
+	
+	public String toPrintableString() {
+		return this.getApgarInterval() + "          " + this.getPulse() + "          " + 
+	           this.getRespiration()+"          " + this.getActivity() +"          " + 
+			   this.getGrimace() + "          " + this.getAppearance();
+	}
+	
 	/**
 	 * Getter of the property <tt>id</tt>
 	 * @return  Returns the id.
@@ -197,4 +206,6 @@ public class Apgar  implements Serializable{
 		public void setApgarInterval(int apgarInterval) {
 			this.apgarInterval = apgarInterval;
 		}
+		
+
 }

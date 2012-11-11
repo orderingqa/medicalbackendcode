@@ -29,7 +29,8 @@ public class CasesHelper {
 				"select {c.*} from Cases c, Gravida d where c.id=d.id order by "+ sortByField + " limit " + numberOfOnePage +  " offset " + offset );
 		sqlQuery.addEntity("c", Cases.class);
 		List list = sqlQuery.list();
-		HibernateTestUtil.destroySession();
+//		HibernateTestUtil.destroySession();
+//      TODO 如果我不进行detroySession，我可以返回给client端可以进行级联查询的list。但这样存在风险。
 		return list;
 	}
 		
@@ -39,7 +40,7 @@ public class CasesHelper {
 	 * @return
 	 */
 	public static List getLatestCases(int numberOfOnePage) {
-		return getCasesSortByField(numberOfOnePage, 1, "createDate");
+		return getCasesSortByField(numberOfOnePage, 1, "createDate DESC");
 	}
 	
 	public static long addCase(int medicalNo, String doctorName, String gravidaName, int age) {
