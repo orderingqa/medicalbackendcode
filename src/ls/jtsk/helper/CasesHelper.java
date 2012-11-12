@@ -29,8 +29,13 @@ public class CasesHelper {
 				"select {c.*} from Cases c, Gravida d where c.id=d.id order by "+ sortByField + " limit " + numberOfOnePage +  " offset " + offset );
 		sqlQuery.addEntity("c", Cases.class);
 		List list = sqlQuery.list();
-//		HibernateTestUtil.destroySession();
-//      TODO 如果我不进行detroySession，我可以返回给client端可以进行级联查询的list。但这样存在风险。
+		
+		HibernateTestUtil.destroySession();
+		
+//      如果我不进行detroySession，我可以返回给client端可以进行级联查询的list。但这样存在问题。比如：
+//		如果不destroySession的一个问题在于，我此时创建一个case，这时候进行提交时会遇到database is locked的错误。
+//		看起来是因为写记录的时候发现数据库已经被读出来了。所以建立了锁
+        // TODO 需要一个克隆函数能够将一系列对象都返回，或者直接返回json供前台解析。		
 		return list;
 	}
 		
