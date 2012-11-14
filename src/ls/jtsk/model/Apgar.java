@@ -51,8 +51,16 @@ public class Apgar  implements Serializable{
 	 */
 	private int appearance; // 肤色
 	
+	public Apgar() {
+		// 赋值为-1是为了区分是否打分
+		this.pulse = -1;
+		this.respiration = -1;
+		this.activity = -1;
+		this.grimace = -1;
+		this.appearance = -1;
+	}
 	
-	
+	// TODO 需要根据-1来特殊制定显示效果。
 	public String toPrintableString() {
 		return this.getApgarInterval() + "          " + this.getPulse() + "          " + 
 	           this.getRespiration()+"          " + this.getActivity() +"          " + 
@@ -137,10 +145,17 @@ public class Apgar  implements Serializable{
 		return respiration;
 	}
 
-	/**
+	    /**
+	     * TODO 这块设计不太好，为了区分是否打过分，不得不把初始的分数设为-1。但进行加法时却出现了问题。
 		 */
-		public int getSum(){
-			return getActivity()+getPulse()+getAppearance()+getGrimace()+getRespiration();
+		public int getSum() {
+			int sumScore = 
+			       (getActivity() == -1 ? 0 : getActivity()) +
+				   (getPulse() == -1 ? 0 : getPulse())+
+				   (getAppearance() == -1 ? 0 : getAppearance())+
+				   (getGrimace() == -1 ? 0 : getGrimace())+
+				   (getRespiration() == -1 ? 0 : getRespiration());
+			return sumScore;
 		}
 
 		/**
