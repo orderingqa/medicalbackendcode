@@ -23,14 +23,14 @@ import java.util.List;
  *
  */
 public class TestCases {
-
+	
 	@Test
 	public void testAddCase() {
 		int randomNum = TestUtility.randomNumber();
 	    int age = 22;
-	    String gravidaNameString = "病历"+randomNum;
+	    String gravidaNameString = "病历test"+randomNum;
 	    int medicalNo = randomNum;
-	    String doctorNameString = "刘大夫"+randomNum;
+	    String doctorNameString = "刘大夫test"+randomNum;
 	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age);
 	}
 		
@@ -44,9 +44,13 @@ public class TestCases {
 	
 	@Test
 	public void testGetLatestCases() {
+		testAddCase();
 		CasesHelper ch = new CasesHelper();
-		List list = ch.getLatestCases(2);
-		assertEquals(list.size(), 2);
-		assertEquals(((Cases)list.get(0)).getCreateDate(), "2012-10-14 16:05:04");
+		List list = ch.getLatestCases(5);
+		assertEquals(list.size(), 5);
+		Cases topCase = (Cases)list.get(0);
+		assertEquals(topCase.getCreateDate().indexOf(new SimpleDateFormat("yyyy-MM-dd").format(new Date())), 0);
+		assertEquals(topCase.getGravida().getName().indexOf("病历test"), 0);
+		assertEquals(topCase.getDoctor().getDoctorName().indexOf("刘大夫test"), 0);
 	}
 }
