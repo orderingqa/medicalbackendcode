@@ -62,9 +62,12 @@ public class Apgar  implements Serializable{
 	
 	// TODO 需要根据-1来特殊制定显示效果。
 	public String toPrintableString() {
-		return this.getApgarInterval() + "          " + this.getPulse() + "          " + 
-	           this.getRespiration()+"          " + this.getActivity() +"          " + 
-			   this.getGrimace() + "          " + this.getAppearance();
+		return (this.getApgarInterval() == -1 ? "未打分" : this.getApgarInterval()) + "          " + 
+	           (this.getPulse() == -1 ? "未打分" : this.getPulse()) + "          " + 
+	           (this.getRespiration() == -1 ? "未打分" : this.getRespiration())+"          " + 
+	           (this.getActivity() == -1 ? "未打分" : this.getActivity()) +"          " + 
+			   (this.getGrimace() == -1 ? "未打分" :  + this.getGrimace()) + "          " + 
+	           (this.getAppearance() == -1 ? "未打分" :  + this.getAppearance());
 	}
 	
 	/**
