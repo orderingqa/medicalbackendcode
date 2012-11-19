@@ -33,7 +33,7 @@ public class CasesHelper {
 		
 		// TODO [待总结] 这个是为了让hibernate来将doctor数据加载，这样后台就可以使用。
 		for (int i=0; i<list.size(); i++) {
-			System.out.println(((Cases) list.get(i)).getDoctor().getDoctorName());
+			((Cases) list.get(i)).getDoctor().getDoctorName();
 		}
 		HibernateTestUtil.destroySession();
 //      如果我不进行detroySession，我可以返回给client端可以进行级联查询的list。但这样存在问题。比如：
