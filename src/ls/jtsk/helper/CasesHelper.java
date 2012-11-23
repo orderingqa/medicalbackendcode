@@ -52,6 +52,8 @@ public class CasesHelper {
 		return getCasesSortByField(numberOfOnePage, 1, "createDate DESC");
 	}
 	
+	
+	// TODO 我这里所有的函数都没有处理数据库异常等，如果异常，应该返回标记，并将错误返回到前台。
 	public static long addCase(int medicalNo, String doctorName, String gravidaName, int age) {
 	    Gravida gravida = new Gravida();
 	    gravida.setAge(age);
@@ -68,6 +70,27 @@ public class CasesHelper {
 	    HibernateTestUtil.session.save(newCase); // Case和Gravida的对应关系是严格一对一的，主键都是一样的。
 	    HibernateTestUtil.destroySession();
 	    return newCase.getId();
+	}
+	
+	
+	// TODO 关于doctor信息的修改，我们只是看下是不是个新的doctorName，不是的话，新建一个doctor对象出来而已。
+	public static void modifyCase(long caseId, String gravidaName, int newAge, int newMedicalNo, String newDoctorName) {
+		HibernateTestUtil.getSession();
+		Cases casesFromId = (Cases) HibernateTestUtil.session.load(Cases.class, caseId);
+		Gravida gravidaFromIdGravida = casesFromId.getGravida();
+		gravidaFromIdGravida.setName(gravidaName);
+		gravidaFromIdGravida.setAge(newAge);
+		gravidaFromIdGravida.setMedicNo(newMedicalNo);
+		Doctor doctorFromIdDoctor = casesFromId.getDoctor();
+		if (doctorFromIdDoctor.getDoctorName() != newDoctorName) {
+			Doctor doctor = new Doctor();
+		    doctor.setDoctorName(newDoctorName);
+		    casesFromId.setDoctor(doctor);
+		    HibernateTestUtil.session.save(doctor); // 我们必须先save doctor，然后Cases表的外键才会起作用。
+		}
+		casesFromId.setGravida(gravidaFromIdGravida);
+		HibernateTestUtil.session.update(casesFromId);
+		HibernateTestUtil.destroySession();
 	}
 	
 	public static Cases getCasesById(long caseGravidaId) {
