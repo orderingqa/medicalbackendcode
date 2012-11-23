@@ -53,4 +53,30 @@ public class TestCases {
 		assertEquals(topCase.getGravida().getName().indexOf("病历test"), 0);
 		assertEquals(topCase.getDoctor().getDoctorName().indexOf("刘大夫test"), 0);
 	}
+	
+	// TODO 程序员的工作就是automate everything，比如能不能一键执行所有的automation case？
+	
+	@Test
+	public void testModifyCase() {
+		testAddCase(); // 添加一个病历
+		List list = CasesHelper.getLatestCases(1); // 检索出来一个列表
+		Cases topCase = (Cases) list.get(0); // 取出第一个病历
+	    String oldGrividaName = topCase.getGravida().getName();
+	    int oldGravidaAge = topCase.getGravida().getAge();
+		int oldMedicalNo = topCase.getGravida().getMedicNo();
+	    String oldDoctorName = topCase.getDoctor().getDoctorName();
+	    CasesHelper.modifyCase(topCase.getId(), oldGrividaName, oldGravidaAge+1, oldMedicalNo, oldDoctorName);
+		list = CasesHelper.getLatestCases(1); // 检索出来一个列表
+		topCase = (Cases) list.get(0); // 取出第一个病历
+		assertEquals(topCase.getGravida().getAge(), 23);
+	}
+	
+	@Test
+	public void testDeleteCase() {
+		testAddCase();
+		List list = CasesHelper.getLatestCases(1); // 检索出来一个列表
+		Cases topCase = (Cases) list.get(0); // 取出第一个病历
+	    CasesHelper.deleteCase(topCase.getId());
+	}
+	
 }

@@ -74,7 +74,8 @@ public class CasesHelper {
 	
 	
 	// TODO 关于doctor信息的修改，我们只是看下是不是个新的doctorName，不是的话，新建一个doctor对象出来而已。
-	public static void modifyCase(long caseId, String gravidaName, int newAge, int newMedicalNo, String newDoctorName) {
+	public static void modifyCase(long caseId, String gravidaName, 
+			int newAge, int newMedicalNo, String newDoctorName) {
 		HibernateTestUtil.getSession();
 		Cases casesFromId = (Cases) HibernateTestUtil.session.load(Cases.class, caseId);
 		Gravida gravidaFromIdGravida = casesFromId.getGravida();
@@ -82,7 +83,7 @@ public class CasesHelper {
 		gravidaFromIdGravida.setAge(newAge);
 		gravidaFromIdGravida.setMedicNo(newMedicalNo);
 		Doctor doctorFromIdDoctor = casesFromId.getDoctor();
-		if (doctorFromIdDoctor.getDoctorName() != newDoctorName) {
+		if (newDoctorName !=null && ! doctorFromIdDoctor.getDoctorName().equals(newDoctorName)) {
 			Doctor doctor = new Doctor();
 		    doctor.setDoctorName(newDoctorName);
 		    casesFromId.setDoctor(doctor);
@@ -92,6 +93,14 @@ public class CasesHelper {
 		HibernateTestUtil.session.update(casesFromId);
 		HibernateTestUtil.destroySession();
 	}
+	
+	public static void deleteCase(long caseId) {
+		HibernateTestUtil.getSession();
+		Cases casesFromId = (Cases) HibernateTestUtil.session.load(Cases.class, caseId);
+		HibernateTestUtil.session.delete(casesFromId);
+		HibernateTestUtil.destroySession();
+	}
+	
 	
 	public static Cases getCasesById(long caseGravidaId) {
 		HibernateTestUtil.getSession();
