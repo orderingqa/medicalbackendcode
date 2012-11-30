@@ -105,6 +105,8 @@ public class CasesHelper {
 	public static Cases getCasesById(long caseGravidaId) {
 		HibernateTestUtil.getSession();
 		Cases casesFromId = (Cases) HibernateTestUtil.session.load(Cases.class, caseGravidaId);
+		casesFromId.getGravida().getBabys();
+		casesFromId.getDoctor().getDoctorName();
 		HibernateTestUtil.destroySession();
 		return casesFromId;
 	}
