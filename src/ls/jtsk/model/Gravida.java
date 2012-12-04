@@ -3,6 +3,8 @@ package ls.jtsk.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import org.hibernate.mapping.Column;
+
 /**
  * @hibernate.class table = "Gravida"
  * @author liushuai
@@ -45,6 +47,8 @@ public class Gravida  implements Serializable{
 	 */
 	private Set babys = new java.util.HashSet();
 
+	private String comment = null;
+	
 	/**
 	 * Getter of the property <tt>id</tt>
 	 * @return  Returns the id.
@@ -94,6 +98,23 @@ public class Gravida  implements Serializable{
 	}
 
 	/**
+	 * @hibernate.property column = "comment"
+	 * @return
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * Setter of the property <tt>id</tt>
+	 * @param id  The id to set.
+	 * @uml.property  name="id"
+	 */
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	/**
 	 * @param age
 	 * @uml.property  name="age"
 	 */
@@ -126,12 +147,7 @@ public class Gravida  implements Serializable{
 		this.medicNo = medicNo;
 	}
 
-	/**
-	 * Setter of the property <tt>id</tt>
-	 * @param id  The id to set.
-	 * @uml.property  name="id"
-	 */
-	public void setId(long id) {
-		this.id = id;
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 }

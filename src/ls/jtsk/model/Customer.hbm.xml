@@ -7,8 +7,8 @@
 <hibernate-mapping
 >
     <class
-        name="ls.jtsk.model.Gravida"
-        table="Gravida"
+        name="ls.jtsk.model.Customer"
+        table="Customer"
     >
 
         <id
@@ -19,46 +19,11 @@
             <generator class="native">
               <!--  
                   To add non XDoclet generator parameters, create a file named 
-                  hibernate-generator-params-Gravida.xml 
+                  hibernate-generator-params-Customer.xml 
                   containing the additional parameters and place it in your merge dir. 
               --> 
             </generator>
         </id>
-
-        <property
-            name="age"
-            type="int"
-            update="true"
-            insert="true"
-            column="age"
-        />
-
-        <property
-            name="medicNo"
-            type="int"
-            update="true"
-            insert="true"
-            column="medicalNo"
-        />
-
-        <set
-            name="babys"
-            table="Baby"
-            lazy="false"
-            cascade="all"
-            sort="unsorted"
-        >
-
-            <key
-                column="momId"
-            >
-            </key>
-
-            <one-to-many
-                  class="ls.jtsk.model.Baby"
-            />
-
-        </set>
 
         <property
             name="name"
@@ -69,16 +34,49 @@
         />
 
         <property
-            name="comment"
+            name="phone"
             type="java.lang.String"
             update="true"
             insert="true"
-            column="comment"
+            column="phone"
+        />
+
+        <property
+            name="email"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="email"
+        />
+
+        <property
+            name="hospitalAndDepString"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="hospital"
+            not-null="true"
+        />
+
+        <property
+            name="departmentString"
+            type="java.lang.String"
+            update="true"
+            insert="true"
+            column="department"
+        />
+
+        <property
+            name="isActivated"
+            type="int"
+            update="true"
+            insert="true"
+            column="isActivated"
         />
 
         <!--
             To add non XDoclet property mappings, create a file named
-                hibernate-properties-Gravida.xml
+                hibernate-properties-Customer.xml
             containing the additional properties and place it in your merge dir.
         -->
 

@@ -23,7 +23,6 @@ import java.util.List;
  *
  */
 public class TestCases {
-	
 	@Test
 	public void testAddCase() {
 		int randomNum = TestUtility.randomNumber();
@@ -31,7 +30,8 @@ public class TestCases {
 	    String gravidaNameString = "病历test"+randomNum;
 	    int medicalNo = randomNum;
 	    String doctorNameString = "刘大夫test"+randomNum;
-	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age);
+	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age, "请填写类似孕高症等其他备注");
+//	    CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age, "孕高症");
 	}
 		
 	@Test
@@ -65,7 +65,7 @@ public class TestCases {
 	    int oldGravidaAge = topCase.getGravida().getAge();
 		int oldMedicalNo = topCase.getGravida().getMedicNo();
 	    String oldDoctorName = topCase.getDoctor().getDoctorName();
-	    CasesHelper.modifyCase(topCase.getId(), oldGrividaName, oldGravidaAge+1, oldMedicalNo, oldDoctorName);
+	    CasesHelper.modifyCase(topCase.getId(), oldGrividaName, oldGravidaAge+1, oldMedicalNo, oldDoctorName, "新的comment");
 		list = CasesHelper.getLatestCases(1); // 检索出来一个列表
 		topCase = (Cases) list.get(0); // 取出第一个病历
 		assertEquals(topCase.getGravida().getAge(), 23);

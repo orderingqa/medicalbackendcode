@@ -54,11 +54,12 @@ public class CasesHelper {
 	
 	
 	// TODO 我这里所有的函数都没有处理数据库异常等，如果异常，应该返回标记，并将错误返回到前台。
-	public static long addCase(int medicalNo, String doctorName, String gravidaName, int age) {
+	public static long addCase(int medicalNo, String doctorName, String gravidaName, int age, String gravidaComment) {
 	    Gravida gravida = new Gravida();
 	    gravida.setAge(age);
 	    gravida.setName(gravidaName);
 	    gravida.setMedicNo(medicalNo);
+	    if (gravidaComment != null) gravida.setComment(gravidaComment);
 	    Doctor doctor = new Doctor();
 	    doctor.setDoctorName(doctorName);
 	    Cases newCase = new Cases();
@@ -75,13 +76,14 @@ public class CasesHelper {
 	
 	// TODO 关于doctor信息的修改，我们只是看下是不是个新的doctorName，不是的话，新建一个doctor对象出来而已。
 	public static void modifyCase(long caseId, String gravidaName, 
-			int newAge, int newMedicalNo, String newDoctorName) {
+			int newAge, int newMedicalNo, String newDoctorName, String comment) {
 		HibernateTestUtil.getSession();
 		Cases casesFromId = (Cases) HibernateTestUtil.session.load(Cases.class, caseId);
 		Gravida gravidaFromIdGravida = casesFromId.getGravida();
 		gravidaFromIdGravida.setName(gravidaName);
 		gravidaFromIdGravida.setAge(newAge);
 		gravidaFromIdGravida.setMedicNo(newMedicalNo);
+		gravidaFromIdGravida.setComment(comment);
 		Doctor doctorFromIdDoctor = casesFromId.getDoctor();
 		if (newDoctorName !=null && ! doctorFromIdDoctor.getDoctorName().equals(newDoctorName)) {
 			Doctor doctor = new Doctor();
