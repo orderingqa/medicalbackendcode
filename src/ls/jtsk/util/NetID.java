@@ -57,13 +57,15 @@ public class NetID {
     public static boolean isValidActivateNumber(long applySN) {
     	// correctActivateSN为刘大夫生成的最终序列号
     	String correctActivateSN = finalActivateNumberGenerate(generateSnFromMacAddressToNumber(getMacAddressFromSystemCall()));
-    	return correctActivateSN.equals(finalActivateNumberGenerate(applySN)) ? true : false;
+    	return correctActivateSN.equals((new Long(applySN)).toString()) ? true : false;
     }
     
     public static long generateApplyNumber() {
     	return generateSnFromMacAddressToNumber(getMacAddressFromSystemCall());
     }
     
+    
+    // TODO 这个返回String实在是迫不得已，因为无法确保返回来long的长度。
     public static String finalActivateNumberGenerate(long sn) {
     	long finalNumber = (sn + 10016959) * 17 ;
     	return new Long(finalNumber).toString().substring(0, 9);

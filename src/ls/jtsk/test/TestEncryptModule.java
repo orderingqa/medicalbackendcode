@@ -34,8 +34,8 @@ public class TestEncryptModule {
 	
 	@Test
 	public void testFinalOutsideInterface() {
-		assertEquals(NetID.generateApplyNumber(), 501549096080L);
-        assertEquals(NetID.isValidActivateNumber(501549096080L), true);
+		assertEquals(NetID.generateApplyNumber(), 140719370357L);
+        assertEquals(NetID.isValidActivateNumber(239239958L), true);
 	}
 	
     @Test
