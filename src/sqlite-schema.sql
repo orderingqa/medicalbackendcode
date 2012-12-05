@@ -5,6 +5,8 @@
 
     drop table if exists Cases;
 
+    drop table if exists Customer;
+
     drop table if exists Doctor;
 
     drop table if exists Gravida;
@@ -36,6 +38,17 @@
         primary key (id)
     );
 
+    create table Customer (
+        id  integer,
+        name varchar,
+        phone varchar,
+        email varchar,
+        hospital varchar not null,
+        department varchar,
+        isActivated integer,
+        primary key (id)
+    );
+
     create table Doctor (
         id  integer,
         doctorName varchar,
@@ -47,5 +60,6 @@
         age integer,
         medicalNo integer,
         name varchar,
+        comment varchar,
         primary key (id)
     );
