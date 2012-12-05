@@ -2,4 +2,5 @@ classes
 bin
 temp/*.txt
 *.log
-.settings/
+.settings
+.project
