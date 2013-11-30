@@ -37,7 +37,7 @@ public class TestApgar {
 	    String gravidaNameString = "²¡Àú"+randomNum;
 	    int medicalNo = randomNum;
 	    String doctorNameString = "Áõ´ó·ò"+randomNum;
-	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age, null);
+	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, "", gravidaNameString, age, null);
 	    long babyId = BabyHelper.addBaby(caseId, Gender.BOY, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 	    
         Apgar tstApgar = new Apgar();

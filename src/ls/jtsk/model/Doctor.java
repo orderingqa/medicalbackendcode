@@ -17,6 +17,12 @@ public class Doctor implements Serializable{
 	 * @uml.property  name="doctorName"
 	 */
 	private String doctorName = null;
+	
+	/**
+	 * @uml.property  name="jieshengrenName"
+	 */
+	private String jieshengrenName = null;
+	
 	/**
 	 * 
 	 */
@@ -51,5 +57,23 @@ public class Doctor implements Serializable{
 	 */
 	public void setDoctorName(String doctorName) {
 		this.doctorName = doctorName;
+	}
+	
+	/** 
+	 * @return
+	 * @uml.property  name="jieshengrenName"
+	 * @hibernate.property column = "jieshengrenName"
+	 */
+	public String getJieshengrenName() {
+		// TODO 如果重名，如何处理，如何让人分辨？所以doctor需要科室，或者需要工号。
+		return jieshengrenName;
+	}
+	
+	/** 
+	 * @param nameString
+	 * @uml.property  name="jieshengrenName"
+	 */
+	public void setJieshengrenName(String jieshengrenName) {
+		this.jieshengrenName = jieshengrenName;
 	}
 }

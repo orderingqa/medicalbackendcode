@@ -54,7 +54,7 @@ public class CasesHelper {
 	
 	
 	// TODO 我这里所有的函数都没有处理数据库异常等，如果异常，应该返回标记，并将错误返回到前台。
-	public static long addCase(int medicalNo, String doctorName, String gravidaName, int age, String gravidaComment) {
+	public static long addCase(int medicalNo, String doctorName, String jieshengrenName, String gravidaName, int age, String gravidaComment) {
 	    Gravida gravida = new Gravida();
 	    gravida.setAge(age);
 	    gravida.setName(gravidaName);
@@ -62,6 +62,7 @@ public class CasesHelper {
 	    if (gravidaComment != null) gravida.setComment(gravidaComment);
 	    Doctor doctor = new Doctor();
 	    doctor.setDoctorName(doctorName);
+	    doctor.setJieshengrenName(jieshengrenName);
 	    Cases newCase = new Cases();
 	    newCase.setCreateDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
 	    newCase.setDoctor(doctor);

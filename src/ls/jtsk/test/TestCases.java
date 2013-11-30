@@ -27,10 +27,11 @@ public class TestCases {
 	public void testAddCase() {
 		int randomNum = TestUtility.randomNumber();
 	    int age = 22;
-	    String gravidaNameString = "病历test"+randomNum;
+	    String gravidaNameString = "病历test"+randomNum+"920";
 	    int medicalNo = randomNum;
-	    String doctorNameString = "刘大夫test"+randomNum;
-	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age, "请填写类似孕高症等其他备注");
+	    String doctorNameString = "刘大夫test"+randomNum+"920";
+	    String jieshengrenNameString = "接生大夫"+randomNum+"920";
+	    long caseId = CasesHelper.addCase(medicalNo, doctorNameString, jieshengrenNameString, gravidaNameString, age, "请填写类似孕高症等其他备注");
 //	    CasesHelper.addCase(medicalNo, doctorNameString, gravidaNameString, age, "孕高症");
 	}
 		

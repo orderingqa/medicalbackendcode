@@ -52,6 +52,7 @@
     create table Doctor (
         id  integer,
         doctorName varchar,
+        jieshengrenName varchar,
         primary key (id)
     );
 
